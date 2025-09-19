@@ -1,0 +1,8 @@
+downloaded_files
+latest_logs
+.pytest_cache
+.idea
+.DS_Store
+venv
+__pycache__
+dist
