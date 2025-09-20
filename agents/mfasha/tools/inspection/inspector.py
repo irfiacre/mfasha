@@ -1,10 +1,9 @@
 import time
-import random
 import unittest
 from HelperBase.base import HelperBase
 
 
-class AutomateMarkItemsAsRead(HelperBase):
+class InspectionPage(HelperBase):
 
     def get_current_page(self):
         self.open_webapp()

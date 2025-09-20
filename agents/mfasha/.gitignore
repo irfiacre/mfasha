@@ -6,3 +6,4 @@ latest_logs
 venv
 __pycache__
 dist
+.env
