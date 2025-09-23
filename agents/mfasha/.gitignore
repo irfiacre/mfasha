@@ -7,3 +7,4 @@ venv
 __pycache__
 dist
 .env
+node_modules

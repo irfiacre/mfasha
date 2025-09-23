@@ -1,4 +1,5 @@
 from google.adk.agents import Agent, SequentialAgent
+from google.adk.planners import BuiltInPlanner
 from google.genai import types
 from mfasha_agent.prompts import INSTRUCTIONS
 from mfasha_agent.tools.tools import start_browser_session_tool, get_body_tool, add_text_to_input_tool, click_xpath_tool, \
@@ -28,6 +29,9 @@ automation_development_agent = Agent(
     description="Agent to develop the automation script.",
     instruction=(INSTRUCTIONS["automation_agent"]),
     output_key="automation_script",
+    # planner=BuiltInPlanner(
+    #     thinking_config=types.ThinkingConfig(include_thoughts=True)
+    # ),
     tools=[
         start_browser_session_tool,
         get_body_tool,
