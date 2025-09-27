@@ -43,8 +43,8 @@ export function InputForm({
 
   const placeholderText =
     context === "chat"
-      ? "Add more details, ask questions, or request changes..."
-      : "What goal would you like to achieve? e.g., Build a mobile app, Plan a marketing campaign, Learn a new skill...";
+      ? "Add requirements..."
+      : "Add your desired requirements";
 
   return (
     <div className="w-full">
@@ -111,13 +111,13 @@ export function InputForm({
             {isLoading ? (
               <>
                 <Loader2 className="h-4 w-4 animate-spin" />
-                <span className="hidden sm:inline">Planning...</span>
+                <span className="hidden sm:inline">Processing...</span>
               </>
             ) : (
               <>
                 <Send className="h-4 w-4" />
                 <span className="hidden sm:inline">
-                  {context === "chat" ? "Send" : "Plan Goal"}
+                  {context === "chat" ? "Send" : "Process Goal"}
                 </span>
               </>
             )}

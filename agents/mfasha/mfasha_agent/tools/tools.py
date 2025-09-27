@@ -3,7 +3,7 @@ from google.adk.tools import FunctionTool
 from mfasha_agent.tools.seleniumBase import SeleniumBaseTools
 
 
-seleniumBaseTool = SeleniumBaseTools('https://youtube.com')
+seleniumBaseTool = SeleniumBaseTools()
 
 start_browser_session_tool = FunctionTool(func=seleniumBaseTool.start_browser_session)
 

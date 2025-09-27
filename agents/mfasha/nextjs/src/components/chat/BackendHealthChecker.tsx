@@ -48,7 +48,7 @@ function BackendLoadingScreen() {
       <div className="w-full max-w-2xl z-10 bg-neutral-900/50 backdrop-blur-md p-8 rounded-2xl border border-neutral-700 shadow-2xl shadow-black/60">
         <div className="text-center space-y-6">
           <h1 className="text-4xl font-bold text-white flex items-center justify-center gap-3">
-            ✨ AI Goal Planning Assistant 🚀
+            MFasha Assistant
           </h1>
 
           <div className="flex flex-col items-center space-y-4">
@@ -63,30 +63,13 @@ function BackendLoadingScreen() {
                 }}
               ></div>
             </div>
-
             <div className="space-y-2">
               <p className="text-xl text-neutral-300">
-                Waiting for backend to be ready...
+                Making sure everything is ready...
               </p>
               <p className="text-sm text-neutral-400">
                 This may take a moment on first startup
               </p>
-            </div>
-
-            {/* Animated dots */}
-            <div className="flex space-x-1">
-              <div
-                className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"
-                style={{ animationDelay: "0ms" }}
-              ></div>
-              <div
-                className="w-2 h-2 bg-purple-500 rounded-full animate-bounce"
-                style={{ animationDelay: "150ms" }}
-              ></div>
-              <div
-                className="w-2 h-2 bg-pink-500 rounded-full animate-bounce"
-                style={{ animationDelay: "300ms" }}
-              ></div>
             </div>
           </div>
         </div>

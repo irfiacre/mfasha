@@ -1,6 +1,7 @@
 "use client";
 
-import { Bot } from "lucide-react";
+import { BotMessageSquare } from "lucide-react";
+
 import { UserIdInput } from "@/components/chat/UserIdInput";
 import { SessionSelector } from "@/components/chat/SessionSelector";
 import { useChatContext } from "@/components/chat/ChatProvider";
@@ -21,18 +22,18 @@ export function ChatHeader(): React.JSX.Element {
   } = useChatContext();
 
   return (
-    <div className="relative z-10 flex-shrink-0 border-b border-slate-700/50 bg-slate-800/80 backdrop-blur-sm">
+    <div className="relative z-10 flex-shrink-0 border-b border-slate-700/50 bg-slate-800/80">
       <div className="max-w-5xl mx-auto w-full flex justify-between items-center p-4">
         {/* Left side - App branding */}
         <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center shadow-md">
-            <Bot className="h-4 w-4 text-white" />
+            <BotMessageSquare className="h-4 w-4" />
           </div>
           <div>
-            <h1 className="text-lg font-semibold text-slate-100">
-              Goal Planning Assistant
+            <h1 className="text-lg font-semibold">
+              MFasha
             </h1>
-            <p className="text-xs text-slate-400">Powered by Google Gemini</p>
+            <p className="text-xs text-slate-400">Automate scripts at your fingertips</p>
           </div>
         </div>
 

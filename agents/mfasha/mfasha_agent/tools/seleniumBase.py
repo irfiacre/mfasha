@@ -9,25 +9,21 @@ class SeleniumBaseTools:
     Gets the contact details of the chosen person
     """
 
-    def __init__(self, web_url: str = "https://urubutopay.rw"):
+    def __init__(self):
         """ 
         Initialize the SeleniumBaseTools class with the necessary pages
-
-        Args:
-            web_url (str): The URL that has to be opened (default: 'https://urubutopay.rw')
-
-        Returns:
-            bool: True if the web url was opened successfully, else False.
         """
-        self.web_url = web_url
         self.driver = None
 
-    def start_browser_session(self):
+    def start_browser_session(self, web_url: str):
         """
         Starts the browser session successfully.
+
+        Args:
+            web_url (str): The URI that has to be opened in the browser session (example: www.google.com).
         """
         self.driver = Driver(uc=True)
-        self.driver.get(self.web_url)
+        self.driver.uc_open_with_reconnect(web_url, 4)
         time.sleep(1)
         self.driver.maximize_window()
         time.sleep(1)
@@ -77,18 +73,20 @@ class SeleniumBaseTools:
         """
         self.driver.send_keys(selector=element_xpath, text=text_to_send)
 
-    def scroll(self, element_xpath: str, direction: str = "DOWN"):
+    def scroll(self, direction: str = "DOWN", scroll_amount: int = 1):
         """
         Scroll up or down the page.
 
         Args:
-            element_xpath (str): The xpath of any element to reference the action.
-            direction (str): The direction to scroll to (default: 'DOWN').
+            direction (str): The direction to scroll to (example: 'DOWN' or 'UP').
+            scroll_amount (int): The number of times you want to scroll (example: 1).
         """
-        if direction == 'UP':
-            self.driver.send_keys(element_xpath, Keys.ARROW_UP)
-        else:
-            self.driver.send_keys(element_xpath, Keys.ARROW_DOWN)
+        for i in range(scroll_amount):
+            if direction == 'UP':
+                self.execute_script("window.scrollTo(%s, 0);" % (i * 100))
+            else:
+                self.execute_script("window.scrollTo(0, %s);" % (i * 100))
+        
 
     def click_enter(self, element_xpath: str):
         """
