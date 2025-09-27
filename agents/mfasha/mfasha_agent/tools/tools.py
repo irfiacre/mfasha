@@ -14,3 +14,4 @@ scroll_tool = FunctionTool(func=seleniumBaseTool.scroll)
 click_enter_tool = FunctionTool(func=seleniumBaseTool.click_enter)
 
 close_browser_tool = FunctionTool(func=seleniumBaseTool.close)
+
